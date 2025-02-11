@@ -4,9 +4,11 @@ import OpenAISetting from './OpenAISetting'
 import ChatboxAISetting from './ChatboxAISetting'
 import AIProviderSelect from '../../components/AIProviderSelect'
 import { OllamaHostInput, OllamaModelSelect } from './OllamaSetting'
+import { LMStudioHostInput, LMStudioModelSelect } from './LMStudioSetting'
 import SiliconFlowSetting from './SiliconFlowSetting'
 import MaxContextMessageCountSlider from '@/components/MaxContextMessageCountSlider'
 import TemperatureSlider from '@/components/TemperatureSlider'
+import ClaudeSetting from './ClaudeSetting'
 
 interface ModelConfigProps {
     settingsEdit: ModelSettings
@@ -49,8 +51,35 @@ export default function ModelSettingTab(props: ModelConfigProps) {
                     />
                 </>
             )}
+
+            {settingsEdit.aiProvider === ModelProvider.LMStudio && (
+                <>
+                    <LMStudioHostInput
+                        LMStudioHost={settingsEdit.lmStudioHost}
+                        setLMStudioHost={(v) => setSettingsEdit({ ...settingsEdit, lmStudioHost: v })}
+                    />
+                    <LMStudioModelSelect
+                        LMStudioModel={settingsEdit.lmStudioModel}
+                        setLMStudioModel={(v) => setSettingsEdit({ ...settingsEdit, lmStudioModel: v })}
+                        LMStudioHost={settingsEdit.lmStudioHost}
+                    />
+                    <MaxContextMessageCountSlider
+                        value={settingsEdit.openaiMaxContextMessageCount}
+                        onChange={(v) => setSettingsEdit({ ...settingsEdit, openaiMaxContextMessageCount: v })}
+                    />
+                    <TemperatureSlider
+                        value={settingsEdit.temperature}
+                        onChange={(v) => setSettingsEdit({ ...settingsEdit, temperature: v })}
+                    />
+                </>
+            )}
+
+
              {settingsEdit.aiProvider === ModelProvider.SiliconFlow && (
                 <SiliconFlowSetting settingsEdit={settingsEdit} setSettingsEdit={setSettingsEdit} />
+            )}
+            {settingsEdit.aiProvider === ModelProvider.Claude && (
+                <ClaudeSetting settingsEdit={settingsEdit} setSettingsEdit={setSettingsEdit} />
             )}
         </Box>
     )

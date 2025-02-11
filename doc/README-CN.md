@@ -144,7 +144,7 @@
     :new_moon: 用户友好的界面，带有夜间模式选项，减少长时间使用时的眼睛疲劳。
 
 -   **团队协作**  
-    :busts_in_silhouette: 轻松协作并在团队中共享 OpenAI API 资源。[了解更多](./team-sharing/README.md)
+    :busts_in_silhouette: 轻松协作并在团队中共享 OpenAI API 资源。[了解更多](../team-sharing/README.md)
 
 -   **跨平台可用性**  
     :computer: 聊天盒已为 Windows、Mac、Linux 用户准备就绪。
@@ -221,10 +221,6 @@ npm run package:all
 ## 请我喝咖啡
 
 [!["请我喝咖啡"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/benn)
-
-| Paypal                                            | 微信支付                                        | 支付宝                                      |
-| ------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
-| [**`Paypal`**](https://www.paypal.me/tobennhuang) | <img src="./statics/wechat_pay.JPG" height="240" /> | <img src="./statics/ali_pay.PNG" height="240" /> |
 
 ## Star History
 
